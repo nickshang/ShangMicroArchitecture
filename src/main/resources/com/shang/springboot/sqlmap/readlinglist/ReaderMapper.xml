@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shang.springboot.readinglist.mapper.ReaderMapper">
+
+    <select id="findOne" resultType="com.shang.springboot.readinglist.entity.Reader">
+        SELECT *  FROM READER WHERE  USERNAME = #{VALUE}
+    </select>
+
+</mapper>
