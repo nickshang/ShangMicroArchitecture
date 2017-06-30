@@ -26,8 +26,8 @@ public class BookMapperTest {
     private BookMapper bookMapper;
 
 
-    @Autowired
-    private DataSourceConfig dataSource;
+//    @Autowired
+//    private DataSourceConfig dataSource;
 
 
     @Test
