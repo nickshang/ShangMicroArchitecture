@@ -1,6 +1,7 @@
 package com.shang.springboot.readinglist.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -9,6 +10,7 @@ import org.springframework.context.ApplicationContextException;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -23,9 +25,11 @@ import java.util.Arrays;
 /**
  * Created by Think on 2017/6/9.
  */
-@Configuration
-@EnableTransactionManagement
-@MapperScan(value = "com.shang.springboot.readinglist.mapper")
+//@Configuration
+//@EnableTransactionManagement
+//@MapperScan(value = "com.shang.springboot.readinglist.mapper")
+@Slf4j
+@Deprecated
 public class DruidDataSourceConfig  implements EnvironmentAware {
 
     private Environment environment;
@@ -43,12 +47,13 @@ public class DruidDataSourceConfig  implements EnvironmentAware {
     public DruidDataSource dataSource() throws SQLException {
 
         if (StringUtils.isEmpty(propertyResolver.getProperty("url"))) {
-            System.out.println("Your database connection pool configuration is incorrect!"
+            log.error("Your database connection pool configuration is incorrect!"
                     + " Please check your Spring profile, current profiles are:"
                     + Arrays.toString(environment.getActiveProfiles()));
             throw new ApplicationContextException(
                     "Database connection pool is not configured correctly");
         }
+
         DruidDataSource druidDataSource = new DruidDataSource();
 
         druidDataSource.setDriverClassName(propertyResolver.getProperty("driver-class-name"));
@@ -66,8 +71,8 @@ public class DruidDataSourceConfig  implements EnvironmentAware {
         druidDataSource.setTestOnBorrow(Boolean.parseBoolean(propertyResolver.getProperty("testOnBorrow")));
         druidDataSource.setTestOnReturn(Boolean.parseBoolean(propertyResolver.getProperty("testOnReturn")));
 
-//        druidDataSource.setPoolPreparedStatements(Boolean.parseBoolean(propertyResolver.getProperty("poolPreparedStatements")));
-//        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(propertyResolver.getProperty("maxPoolPreparedStatementPerConnectionSize")));
+        druidDataSource.setPoolPreparedStatements(Boolean.parseBoolean(propertyResolver.getProperty("poolPreparedStatements")));
+        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(propertyResolver.getProperty("maxPoolPreparedStatementPerConnectionSize")));
         druidDataSource.setFilters(propertyResolver.getProperty("filters"));
         return druidDataSource;
     }
