@@ -5,11 +5,16 @@ import com.shang.springboot.readinglist.entity.Book;
 import com.shang.springboot.readinglist.entity.Reader;
 import com.shang.springboot.readinglist.repository.ReadingListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.HttpRequestHandler;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.NativeWebRequest;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -31,7 +36,8 @@ public class ReadingListController {
         this.amazonProperties = amazonProperties;
     }
 
-    @RequestMapping(method= RequestMethod.GET)
+    //  Reader ->  ReaderHandlerMethodArgumentResolver  自定义解析器实现请求参数绑定方法参数
+    @RequestMapping(method = RequestMethod.GET, value = {"/","/readingList"})
     public String readersBooks(Reader reader, Model model) {
         List<Book> readingList =
                 readingListRepository.findByReader(reader);
@@ -42,7 +48,15 @@ public class ReadingListController {
         }
         return "readingList";
     }
-    @RequestMapping(method=RequestMethod.POST)
+
+
+    @GetMapping(value = "/test")
+    @ResponseBody
+    public String test(Book book, Model model){
+        return "ok";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
     public String addToReadingList(Reader reader, Book book) {
         book.setReader(reader);
         readingListRepository.save(book);
