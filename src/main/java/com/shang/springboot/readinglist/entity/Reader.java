@@ -16,6 +16,10 @@ import java.util.Collection;
 public class Reader implements UserDetails {
     private static final long serialVersionUID = 1L;
 
+    public Reader(){
+
+    }
+
     @Setter
     @Getter
     private long id;
