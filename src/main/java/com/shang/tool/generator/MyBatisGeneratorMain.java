@@ -24,7 +24,7 @@ public class MyBatisGeneratorMain {
 
         // to do
         // 待完善
-        File configFile = new File("E:\\work\\project\\SpringBootDemo\\src\\main\\resources\\generatorConfig.xml");
+        File configFile = new File("E:\\work\\project\\SpringBootDemo\\src\\main\\resources\\generatorconfig\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
