@@ -61,6 +61,11 @@ bootRun {
 	addResources = true
 }
 
+// 设置编码
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
 // 配置forked测试进程
 test {
 	forkEvery = 5												 					// 在forked测试进程中执行测试类的最大数量
