@@ -1,5 +1,7 @@
 package com.shang.springboot.readinglist.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +14,7 @@ import java.util.Collection;
 /**
  * Created by Think on 2017/6/9.
  */
-
+@ApiModel(value = "Reader", description = "用户对象")
 public class Reader implements UserDetails {
     private static final long serialVersionUID = 1L;
 
@@ -20,6 +22,7 @@ public class Reader implements UserDetails {
 
     }
 
+    @ApiModelProperty(value = "id")
     @Setter
     @Getter
     private long id;

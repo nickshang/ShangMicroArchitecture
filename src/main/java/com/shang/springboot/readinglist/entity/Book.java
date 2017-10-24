@@ -7,6 +7,7 @@ import lombok.*;
  * Created by Think on 2017/6/9.
  */
 @Data
+@ToString
 public class Book {
     private Long id;
     private Reader reader;
