@@ -1,6 +1,7 @@
 package com.shang.springboot.readinglist.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shang.springboot.readinglist.exceptionhandle.Error;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -29,10 +30,10 @@ public class ReadingListControllerRestTest {
             HttpGet request = new HttpGet("http://localhost:8080/book/" + 1);
             request.setHeader("Accept","application/json");
 
-           HttpResponse response =  client.execute(request);
-           HttpEntity entity =  response.getEntity();
-           ObjectMapper mapper = new ObjectMapper();
-           Book book  = mapper.readValue(entity.getContent(),Book.class);               // getContent
+            HttpResponse response =  client.execute(request);
+            HttpEntity entity =  response.getEntity();
+            ObjectMapper mapper = new ObjectMapper();
+            Book book  = mapper.readValue(entity.getContent(),Book.class);               // getContent
 
            assertEquals((long)book.getId(),1L);
 
@@ -57,6 +58,9 @@ public class ReadingListControllerRestTest {
         // 2.抽取响应的元数据
         ResponseEntity<Book> responseEntity =  restTemplate.getForEntity("http://localhost:8080/book/{id}",Book.class,1);
         assertEquals( responseEntity.getStatusCode(), HttpStatus.CREATED);
+
+//        ResponseEntity<Error> responseEntity2 =  restTemplate.getForEntity("http://localhost:8080/book/{id}",Error.class,-1);
+//        assertEquals( responseEntity2.getStatusCode(), HttpStatus.NOT_FOUND);
     }
 
     @Test
