@@ -4,12 +4,13 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <properties resource="generatorConfig.properties"/>
+    <properties resource="generatorconfig/generatorConfig.properties"/>
 
     <context id="ssm" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+
         <!-- <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin> -->
         <commentGenerator>
             <!-- 是否去除生成的注释 ture:是 -->
@@ -53,12 +54,44 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
-        <table schema="mybatis" tableName="book" domainObjectName="Book">
+        <table schema="mybatis" tableName="rep_fields" domainObjectName="RepFields">
             <property name="constructorBased" value="true" />
             <property name="useActualColumnNames" value="false" />
             <property name="ignoreQualifiersAtRuntime" value="true" />
         </table>
+
+        <table schema="mybatis" tableName="rep_gridpv_state_month" domainObjectName="RepGridpvStateMonth">
+            <property name="constructorBased" value="true" />
+            <property name="useActualColumnNames" value="false" />
+            <property name="ignoreQualifiersAtRuntime" value="true" />
+        </table>
+
+        <table schema="mybatis" tableName="rep_gridpv_state_month" domainObjectName="RepGridpvStateMonth">
+            <property name="constructorBased" value="true" />
+            <property name="useActualColumnNames" value="false" />
+            <property name="ignoreQualifiersAtRuntime" value="true" />
+        </table>
+
+
+        <table schema="mybatis" tableName="rep_pvdetails_month" domainObjectName="RepPvdetailsMonth">
+            <property name="constructorBased" value="true" />
+            <property name="useActualColumnNames" value="false" />
+            <property name="ignoreQualifiersAtRuntime" value="true" />
+        </table>
+
+        <table schema="mybatis" tableName="rep_overload_month" domainObjectName="RepOverloadMonth">
+            <property name="constructorBased" value="true" />
+            <property name="useActualColumnNames" value="false" />
+            <property name="ignoreQualifiersAtRuntime" value="true" />
+        </table>
+
+
+        <!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+        <!--<table schema="mybatis" tableName="book" domainObjectName="Book">-->
+            <!--<property name="constructorBased" value="true" />-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+            <!--<property name="ignoreQualifiersAtRuntime" value="true" />-->
+        <!--</table>-->
 
         <!--
             table其他属性：

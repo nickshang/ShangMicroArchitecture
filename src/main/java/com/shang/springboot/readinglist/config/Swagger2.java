@@ -12,7 +12,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger2配置
- * Created by Think on 2017/10/23.
+ * 访问路径: http://localhost:8080/swagger-ui.html
+ * @author  NICK
+ * @date  2017/10/23.
  */
 @Configuration
 @EnableSwagger2

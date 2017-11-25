@@ -23,7 +23,7 @@
         SELECT BOOK.*, READER.ID AS READID,  READER.USERNAME ,  READER.FULLNAME  FROM BOOK,READER WHERE  BOOK.READID = READER.ID AND BOOK.ID = #{id}
     </select>
 
-    <insert id="save" parameterType="com.shang.springboot.readinglist.entity.Book" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="save" parameterType="com.shang.springboot.readinglist.entity.Book" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
       INSERT INTO  BOOK (READID,ISBN,TITLE,AUTHOR, DESCRIPTION )
       VALUES( #{reader.id},#{isbn},#{title},#{author},#{description})
     </insert>
