@@ -1,5 +1,6 @@
 package com.shang.upms.service.config;
 
+import com.shang.upms.dao.entity.Book;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

@@ -59,7 +59,7 @@ public class ReadingListControllerRest {
 
     @ApiOperation(value="保存BOOK", notes="保存BOOK")
     @ApiImplicitParam(paramType="path", name = "id", value = "详细实体BOOK", required = true, dataType = "Long")
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET,  headers = {"Host=localhost:8080"})
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT,  headers = {"Host=localhost:8080"})
     @ResponseStatus(HttpStatus.CREATED)
     public Book save(@PathVariable Long id){
         if(id == -1)  throw  new BookNotFoundException(id);                             // 对应异常处理

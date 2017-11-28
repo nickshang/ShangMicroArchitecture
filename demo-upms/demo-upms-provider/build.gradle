@@ -28,15 +28,16 @@ jar {
 dependencies {
     compile project(':demo-upms:demo-upms-dao')
 
-    compile('com.alibaba:druid:1.0.31')
-    compile('mysql:mysql-connector-java')
-    compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.5'
-
-    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.2.1')
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-cache:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.2.1')
+    compile('com.alibaba:druid:1.0.31')
+    compile('mysql:mysql-connector-java')
+    compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.5'
 
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.4.7.RELEASE'
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter-test', version: '1.2.1'

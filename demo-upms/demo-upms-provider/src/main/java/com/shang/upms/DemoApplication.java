@@ -1,4 +1,4 @@
-package com.shang.upms.service;
+package com.shang.upms;
 
 import com.shang.upms.service.config.DataSourceConfig;
 import com.shang.upms.service.config.YmlConfig;

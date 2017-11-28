@@ -1,4 +1,4 @@
-rootProject.name = 'shang-micro-architecture'
+rootProject.name = 'ShangMicroArchitecture'
 include 'demo-common',
         'demo-upms:demo-upms-api',
         'demo-upms:demo-upms-common',

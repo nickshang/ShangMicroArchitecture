@@ -1,5 +1,5 @@
 # 1.项目描述
-基于Spring Boot/cloud分布式敏捷开发系统实践系统
+基于Spring Boot/cloud分布式敏捷开发架构设计实例
 
 # 2.项目组织结构
 ``` 
@@ -24,6 +24,8 @@ demo
 ## 4.1后端技
 技术 | 名称 | 官网
 ----|------|----
+sprint Boot | 微服务框架 |http://projects.spring.io/spring-boot/
+Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.com/alibaba/druid)
 
 ## 4.2前端技术
 
