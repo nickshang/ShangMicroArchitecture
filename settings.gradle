@@ -1,0 +1,7 @@
+rootProject.name = 'shang-micro-architecture'
+include 'demo-common',
+        'demo-upms:demo-upms-api',
+        'demo-upms:demo-upms-common',
+        'demo-upms:demo-upms-dao',
+        'demo-upms:demo-upms-service',
+        'demo-upms:demo-upms-provider'

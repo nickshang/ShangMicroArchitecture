@@ -1,4 +1,4 @@
-package com.shang.springboot.readinglist.entity;
+package com.shang.upms.dao.entity;
 
 import lombok.*;
 

@@ -1,0 +1,30 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+bootRun {
+    addResources = true
+}
+
+bootRepackage{
+    enabled = false
+}
+
+dependencies {
+    compile project(':demo-common')
+    //compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+}
