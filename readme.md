@@ -1,5 +1,5 @@
 # 1.项目描述
-基于Spring Boot/cloud分布式敏捷开发架构设计实例
+基于Spring Boot/cloud分布式敏捷开发架构设计
 
 # 2.项目组织结构
 ``` 
@@ -26,8 +26,9 @@ demo
 ----|------|----
 sprint Boot | 微服务框架 |http://projects.spring.io/spring-boot/
 Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.com/alibaba/druid)
+Shiro | 安全框架  | http://shiro.apache.org/
 
-## 4.2前端技术
+## 4.2 前端技术
 
 ## 4.3 其他
 
@@ -35,3 +36,8 @@ Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.
 
 # 6.拓扑图
 
+# 7.参考资料 
+Shiro http://jinnianshilongnian.iteye.com/blog/2018398
+
+
+# 8.

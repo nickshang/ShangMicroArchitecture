@@ -8,6 +8,11 @@ error:
 spring:
   profiles:
     active: dev
+#  mvc:
+#    view:
+#      suffix: .html
+#      prefix: /
+#    static-path-pattern: /**
 
 logging:
   level:
